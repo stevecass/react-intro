@@ -24,10 +24,10 @@ var ClickAwareButtonComponent = React.createClass({
   },
   handleClick: function() {
     console.log('I ran ' + this.state.clickCount);
-    /* setState allows us to update state. Run it as setState(opts) where 
-       the keys of opts are the state to update.
+    /* setState allows us to update state. Call setState(opts) where 
+       the keys of opts are the keys of the state to update.
        You don't need to pass every key every time - i.e. existing 
-       state with keys you don't pass is left untouched.
+       state with keys you don't include is left untouched.
     */
     this.setState({ clickCount: 1 + Number(this.state.clickCount) });
   },
