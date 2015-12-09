@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First Ever React Page</title>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+
+  <script type="text/jsx" src="app.jsx"></script>
+  <style>
+   body { font-family:  sans-serif;}
+   div { margin: 10px 0;}
+   div.inert { color: #CCC;}
+   div#script{ font-family: monospace;}
+   button {font-size: 10pt;}
+  </style>
+
+</head>
+<body>
+
+<h1>My First Ever React Page</h1>
+
+The following two divs each contain a display only react component called MinimalComponent. It has properties but no state.
+<div id="test-div1"></div>
+<div id="test-div2"></div>
+
+
+This button is an instance of ClickAwareButtonComponent. It has both properties and state. Click it and its state updates. Open the console to see log output
+<div id="test-button"></div>
+
+<br>
+<hr><br><br>
+
+Here is the javascript (jsx) for this page:
+
+<div id="script"></div>
+
+
+<script>
+  /*
+    This script is just loading the jsx into the page we are looking at, so that
+    we can more easily read the script and see its effect at the same time.
+  */
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("GET", "app.jsx", true);
+  xhttp.onload = function() {  
+    document.getElementById('script').innerHTML = '<pre>' + xhttp.responseText.replace(/</g, '&lt;')  + '</pre>';
+  };
+  xhttp.send();
+</script>
+
+
+
+</body>
+</html>
